@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+files:
+  - source: Config/config.txt
+    destination: /*
+  - source: source
+    destination: /var/www
+hooks:
+#  BeforeInstall:
+#    - location: Scripts/UnzipResourceBundle.sh
+#    - location: Scripts/UnzipDataBundle.sh
+  AfterInstall:
+    - location: bin/post_install.sh
+      timeout: 300
+#  ApplicationStart:
+#    - location: Scripts/RunFunctionalTests.sh
+#      timeout: 3600
+#  ValidateService:
+#    - location: Scripts/MonitorService.sh
+#      timeout: 3600
+#      runas: codedeployuser
