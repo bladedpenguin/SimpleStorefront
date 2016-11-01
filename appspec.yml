@@ -1,9 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: Config/config.txt
-    destination: /*
-  - source: source
+  - source: *
     destination: /var/www
 hooks:
 #  BeforeInstall:
