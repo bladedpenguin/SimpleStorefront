@@ -1,0 +1,30 @@
+arn:aws:iam::599764098801:role/NoIncServer
+{
+	"Version": "2012-10-17",
+	"Id": "Policy1477929523994",
+	"Statement": [
+		{
+			"Sid": "Stmt1477929491124",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": [
+					"arn:aws:iam::599764098801:role/ContinuousIntegration",
+					"arn:aws:iam::599764098801:role/NoIncServer"
+				]
+			},
+			"Action": "s3:*",
+			"Resource": "arn:aws:s3:::noinctest/*"
+		},
+		{
+			"Sid": "Stmt1477929522410",
+			"Effect": "Deny",
+			"NotPrincipal": {
+				"AWS": [
+					"arn:aws:iam::599764098801:role/NoIncServer"
+				]
+			},
+			"Action": "s3:*",
+			"Resource": "arn:aws:s3:::noinctest/seccret/*"
+		}
+	]
+}

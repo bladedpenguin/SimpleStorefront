@@ -20,4 +20,5 @@
 /vendor/
 /web/bundles/
 *.secret
+parameters.yml
 
