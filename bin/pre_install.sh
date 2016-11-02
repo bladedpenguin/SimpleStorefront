@@ -5,7 +5,8 @@ echo "Updating aptitude"
 while fuser /var/lib/dpkg/lock >/dev/null 2>&1 ; do
     echo "Waiting for dpkg lock..." 
     sleep 5
-done 
+done
+#If dpkg stays locked forever, the deployment is bust anyway, so theres no point in breaking the loop. ASG lifecyccle stuff will eventually trash the instance.
 
 apt-get update -y
 
