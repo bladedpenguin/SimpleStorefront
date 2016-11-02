@@ -7,8 +7,6 @@ apt-get install git -y > /dev/null
 
 echo "Installing Apache"
 apt-get install apache2 -y > /dev/null
-echo "export APACHE_RUN_USER=vagrant" >> /etc/apache2/envvars
-echo "export APACHE_RUN_GROUP=vagrant" >> /etc/apache2/envvars
 
 echo "Installing Java"
 apt-get install -y default-jre
