@@ -1,12 +1,19 @@
 echo "Provisioning virtual machine..."
 echo "Updating aptitude"
+
+#Sometimes ubuntu wakes up already updating. We need to wait for that to finish.
+while fuser /var/lib/dpkg/lock >/dev/null 2>&1 ; do
+    echo "Waiting for dpkg lock..." 
+    sleep 5
+done 
+
 apt-get update -y
 
 echo "Installing Git"
-apt-get install git -y > /dev/null
+apt-get install git -y 
 
 echo "Installing Apache"
-apt-get install apache2 -y > /dev/null
+apt-get install apache2 -y
 
 echo "Installing Java"
 apt-get install -y default-jre
