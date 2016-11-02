@@ -12,7 +12,7 @@
 apt-get install -y awscli
 aws s3 cp s3://noinctest/secret/parameters.yml /var/www/app/config/parameters.yml
 
-sudo chown -R www-data www
+sudo chown -R www-data /var/www
 cd /var/www/
 sudo -u www-data /usr/bin/composer update
 sudo -u www-data /usr/bin/composer install
